@@ -31,7 +31,7 @@ export class Game{
     isUSB: boolean;
 
     @Column({ length: 20 })
-    standart: string;
+    edicao: string;
 
     @Column("text")
     descricao: string;

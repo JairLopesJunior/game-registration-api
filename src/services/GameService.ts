@@ -26,5 +26,10 @@ export class GameService{
     async findById( id: number ) {
         return this.gameRepository.findOne(id);
     }
+
+    async update( id: number, game: Game ){
+        const gameUpdated = await this.gameRepository.update( id, game );
+        return gameUpdated.affected === 1 ? true : false;
+    }
 }
 

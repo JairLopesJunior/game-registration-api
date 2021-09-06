@@ -22,5 +22,9 @@ export class GameService{
         const gameDeleted = await this.gameRepository.delete( {id} );
         return gameDeleted.affected === 1 ? true : false ;
     }
+
+    async findById( id: number ) {
+        return this.gameRepository.findOne(id);
+    }
 }
 

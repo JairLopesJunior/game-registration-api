@@ -25,7 +25,7 @@ export class GameController{
     @Delete(':id')
     async remove( @Param('id') id: number ) {
         const gameDeleted = await this.gameService.delete(id);
-        
+
         if(!gameDeleted){
             return {
                 statusCode: HttpStatus.NOT_FOUND,
@@ -39,6 +39,9 @@ export class GameController{
         };
     }
 
-
+    @Get(':id')
+    async findById( @Param('id') id: number ): Promise<Game> {
+        return this.gameService.findById(id);1
+    }
 
 }
